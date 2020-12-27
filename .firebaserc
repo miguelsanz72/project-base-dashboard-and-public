@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "base-dashboard-21290": {
+      "hosting": {
+        "project-base-dashboard-and-public": [
+          "base-dashboard-21290"
+        ]
+      }
+    }
+  }
+}
