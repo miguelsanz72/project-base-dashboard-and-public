@@ -3,12 +3,8 @@ import { CommonModule } from '@angular/common';
 import { ProfileComponent } from './profile/profile.component';
 import { FavoritesComponent } from './favorites/favorites.component';
 
-
-
 @NgModule({
   declarations: [ProfileComponent, FavoritesComponent],
-  imports: [
-    CommonModule
-  ]
+  imports: [CommonModule],
 })
-export class PagesModule { }
+export class PagesModule {}

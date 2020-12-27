@@ -1,21 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { DashboardComponent } from './dashboard.component';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () =>
-      import('./pages/pages.module').then((m) => m.PagesModule),
-  },
-  {
-    path: 'auth',
-    loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule),
+    component: DashboardComponent,
   },
 ];
 
 @NgModule({
-  declarations: [],
+  declarations: [DashboardComponent],
   imports: [CommonModule, RouterModule.forChild(routes)],
 })
-export class PublicModule {}
+export class DashboardModule {}
