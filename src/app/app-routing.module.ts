@@ -17,6 +17,12 @@ const routes: Routes = [
   },
 
   {
+    path: 'system',
+    loadChildren: () =>
+      import('./main/private/private.module').then((m) => m.PrivateModule),
+  },
+
+  {
     path: '**',
     redirectTo: '/',
   },
