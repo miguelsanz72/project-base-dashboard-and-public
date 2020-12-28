@@ -7,7 +7,6 @@ import {
   FilterColorPipe,
   ImgProfilePipe,
   KeysPipe,
-  SumArrPipe,
   TypeofPipe,
   UniquePipe,
 } from './index';
@@ -22,7 +21,6 @@ import {
     ConvertSH,
     ExtensionPipe,
     UniquePipe,
-    SumArrPipe,
   ],
   imports: [],
   exports: [
@@ -35,7 +33,6 @@ import {
     ConvertSH,
     ExtensionPipe,
     UniquePipe,
-    SumArrPipe,
   ],
   providers: [UniquePipe],
 })

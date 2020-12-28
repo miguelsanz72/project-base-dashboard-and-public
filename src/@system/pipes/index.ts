@@ -7,4 +7,3 @@ export * from './date-due.pipe';
 export * from './convertSH.pipe';
 export * from './extension.pipe';
 export * from './unique.pipe';
-export * from './sumArr.pipe';

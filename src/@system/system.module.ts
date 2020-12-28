@@ -34,4 +34,4 @@ import { SystemPipesModule } from './pipes/pipes.module';
   ],
   providers: [],
 })
-export class SicruxModule {}
+export class SystemModule {}
