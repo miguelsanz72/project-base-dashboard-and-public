@@ -1,17 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { SingleComponent } from './single/single.component';
+import { HomeComponent } from './home.component';
 import { RouterModule, Routes } from '@angular/router';
 
 const routes: Routes = [
   {
-    path: 'single/:id',
-    component: SingleComponent,
+    path: '',
+    component: HomeComponent,
   },
 ];
 
 @NgModule({
-  declarations: [SingleComponent],
+  declarations: [HomeComponent],
   imports: [CommonModule, RouterModule.forChild(routes)],
 })
-export class PagesModule {}
+export class HomeModule {}
