@@ -1,21 +1,22 @@
-<div class="content">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-2 content-sidebar">
-        <app-sidebar></app-sidebar>
+<div class="content-dashboard">
+  <div fxLayout="row wrap">
+    <div fxFlex.xs="5" fxFlex.gt-xs="5" class="content-sidebar">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div
+      fxLayout="row wrap"
+      fxFlex.xs="95"
+      fxFlex.gt-xs="95"
+      class="content-main"
+    >
+      <div fxFlex="100" class="content-nav-bar">
+        <app-nav-bar></app-nav-bar>
       </div>
-      <div class="col-10">
-        <div class="row">
-          <div class="col-12 content-nav-bar">
-            <app-nav-bar></app-nav-bar>
-          </div>
-          <div class="col-12 content-main">
-            <router-outlet></router-outlet>
-          </div>
-          <div class="col-12 content-footer">
-            <app-footer></app-footer>
-          </div>
-        </div>
+      <div fxFlex="100" class="main">
+        <router-outlet></router-outlet>
+      </div>
+      <div fxFlex="100" class="footer">
+        <app-footer></app-footer>
       </div>
     </div>
   </div>
