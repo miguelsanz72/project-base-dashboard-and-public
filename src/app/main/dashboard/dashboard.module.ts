@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ContentComponent } from './content.component';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutModule } from './layout/layout.module';
-import { SystemModule } from '@system/system.module';
+import { SystemModule } from '@theme/system.module';
 
 const routes: Routes = [
   {

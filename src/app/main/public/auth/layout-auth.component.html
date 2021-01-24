@@ -1,0 +1,18 @@
+<div class="content-form" fxLayout="row wrap" fxLayoutAlign="center top">
+    <div
+        class="box-shadow mt-5 bg-white p-3 p-md-5 z2 position-relative"
+        fxFlex.lt-sm="95"
+        fxFlex.gt-xs="70"
+        fxFlex.gt-sm="50"
+        fxFlex.gt-md="30"
+        fxFlex.gt-lg="25"
+    >
+        <router-outlet></router-outlet>
+    </div>
+    <div class="position-fixed w-100 bottom-0 z1">
+        <app-auth-ilustrations-footer
+            ilustration1="assets/images/ilustrations/ilustration-login-1.svg"
+            ilustration2="assets/images/ilustrations/ilustration-login-2.svg"
+        ></app-auth-ilustrations-footer>
+    </div>
+</div>

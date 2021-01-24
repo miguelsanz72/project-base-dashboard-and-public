@@ -1,3 +1,16 @@
-<app-nav-bar-public></app-nav-bar-public>
-<router-outlet></router-outlet>
-<app-footer-public></app-footer-public>
+<div class="dark-theme-mode">
+    <!-- dark-theme-mode -->
+    <div class="content-layout-public mat-app-background">
+        <div fxLayout="row wrap">
+            <div fxFlex="100" class="content-nav-bar mat-app-background">
+                <app-nav-bar-public></app-nav-bar-public>
+            </div>
+            <div class="content-main mat-app-background">
+                <router-outlet></router-outlet>
+            </div>
+            <div class="content-footer mat-app-background">
+                <app-footer-public></app-footer-public>
+            </div>
+        </div>
+    </div>
+</div>

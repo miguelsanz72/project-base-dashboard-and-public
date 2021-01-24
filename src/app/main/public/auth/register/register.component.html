@@ -1,1 +1,62 @@
-<p>register works!</p>
+<form
+    [formGroup]="registerForm"
+    (ngSubmit)="register()"
+    novalidate
+    [@animate]="{ value: '*', params: { duration: '350ms', y: '100%' } }"
+>
+    <div *ngIf="loading" class="content-loading">
+        <app-loading></app-loading>
+    </div>
+    <span class="title-form text-secondary text-center d-block mb-4">
+        {{ 'AUTH.TITLE.REGISTER' | translate }}
+    </span>
+    <app-form-email formControlName="email"></app-form-email>
+    <app-form-password [showConfirm]="true" formControlName="password"></app-form-password>
+    <div class="terms mb-2" fxLayout="row" fxLayoutAlign="center center">
+        <mat-checkbox
+            color="warn"
+            formControlName="termAndConditions"
+            name="termAndConditions"
+            aria-label="Accept"
+            required
+        >
+            <span>{{ 'AUTH.ACEPT_TERM' | translate }}</span>
+        </mat-checkbox>
+        <a class="ms-2 text-secondary" href="https://sicrux.com/politicas.html" target="_blank">{{
+            'AUTH.TERM' | translate
+        }}</a>
+    </div>
+    <app-button
+        [type]="'submit'"
+        [disabled]="registerForm.invalid"
+        [buttonType]="'normal'"
+        name="{{ 'AUTH.CREATE_ACCOUNT' | translate }}"
+        classes="w-100 mt-3 bg-color--redPrin"
+    ></app-button>
+    <span class="my-3 text-secondary d-block text-center">
+        {{ 'AUTH.OR_REGISTER' | translate }}
+    </span>
+    <app-button
+        [type]="'button'"
+        [buttonType]="'normal'"
+        name="{{ 'AUTH.LOGIN_GOOGLE' | translate }}"
+        classes="w-100 mt-2 btn-google box-shadow"
+        iconImage="assets/images/icons/icon-google.svg"
+    ></app-button>
+    <hr class="mt-2" />
+    <div class="col-12 mb-3">
+        <a
+            (click)="resendEmailActivateAccount()"
+            class="text-secondary text-center d-block cursor-pointer text-decoration-none"
+        >
+            {{ 'AUTH.RESEN_EMAIL_ACTIVATE' | translate }}
+        </a>
+    </div>
+    <div class="content-links" fxLayout="row wrap" fxLayoutAlign="space-between center">
+        <div fxFlex="1 1 auto">
+            <a [routerLink]="['/auth/login']" class="text-center text-secondary text-decoration-none d-block">
+                {{ 'AUTH.LOGIN_ACCOUNT' | translate }}
+            </a>
+        </div>
+    </div>
+</form>

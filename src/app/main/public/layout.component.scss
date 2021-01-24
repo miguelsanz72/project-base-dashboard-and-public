@@ -1,0 +1,14 @@
+@import "@theme/styles/colors";
+.content-layout-public {
+  height: 100vh;
+
+  .content-nav-bar {
+    height: 70px;
+  }
+  .content-main {
+    height: calc(100vh - 110px);
+  }
+  .content-footer {
+    height: 40px;
+  }
+}

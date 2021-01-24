@@ -1,0 +1,44 @@
+.users-avatars {
+    display: flex;
+    flex: 1 1 70%;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+
+    .user-img {
+        margin-right: -5px;
+        border-radius: 50%;
+    }
+
+    .content-first-letter {
+        margin: 2px -5px 2px 0px;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+        a {
+            color: #fff;
+            text-decoration: none;
+        }
+    }
+    .content-more {
+        margin: 2px -5px 2px 0px;
+        padding: 10px;
+        text-align: center;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: 700 !important;
+        text-transform: uppercase !important;
+    }
+}
+.content-project-name {
+    h3 {
+        font-size: 2vmax;
+    }
+}

@@ -2,34 +2,29 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-  {
-    path: '',
-    loadChildren: () =>
-      import('./main/public/public.module').then((m) => m.PublicModule),
-  },
+    {
+        path: '',
+        loadChildren: () => import('./main/public/public.module').then((m) => m.PublicModule),
+    },
 
-  {
-    path: 'dashboard',
-    loadChildren: () =>
-      import('./main/dashboard/dashboard.module').then(
-        (m) => m.DashboardModule
-      ),
-  },
+    {
+        path: 'dashboard',
+        loadChildren: () => import('./main/dashboard/dashboard.module').then((m) => m.DashboardModule),
+    },
 
-  {
-    path: 'system',
-    loadChildren: () =>
-      import('./main/private/private.module').then((m) => m.PrivateModule),
-  },
+    {
+        path: 'site',
+        loadChildren: () => import('./main/private/private.module').then((m) => m.PrivateModule),
+    },
 
-  {
-    path: '**',
-    redirectTo: '/',
-  },
+    {
+        path: '**',
+        redirectTo: '/',
+    },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule],
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule],
 })
 export class AppRoutingModule {}

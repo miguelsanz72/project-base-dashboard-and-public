@@ -1,0 +1,162 @@
+export const locale = {
+    lang: 'es',
+    data: {
+        FORMS_ERRORS: {
+            REQUIRED: 'El campo es requerido',
+            EMAIL: 'Debe colocar un Email valido',
+            WHITE_SPACE: 'No se admiten espacios en blanco',
+            MIN_LENGTH_1: 'Debe tener al menos ',
+            MIN_LENGTH_2: 'caracteres',
+            PASSWORD_CONFIRM_ERROR: 'Las constraseñas no coinciden!',
+        },
+        FORMS_BASIC: {
+            PASSWORD_CONFIRM: 'Confirme su contraseña',
+            NAME: 'Nombre',
+            LAST_NAME: 'Apellído',
+            EMAIL: 'Email',
+            SELECT: 'Seleccione una opción',
+            COLOR: 'Color',
+            DESCRIPTION: 'Descripcion',
+            PHONE: 'Número de teléfono',
+            MINUTES: 'Minutos',
+            HOURS: 'Horas',
+            DATE: 'Fecha',
+            ABOUT: 'Acerca de ti',
+            PASSWORD: 'Contraseña',
+            REMEMBERME: 'Recuerdame',
+            START_DATE: 'Fecha Inicio',
+            START_TIME: 'Hora Inicio',
+            END_DATE: 'Fecha Termino',
+            END_TIME: 'Hora Finalizacion',
+            NOTES: 'Notas',
+            DAYS_SPRINT: 'Días del Sprint',
+            DUEDATE_SPRINT: 'Fecha de entrega del sprint',
+            DUEDATE_SPRINT_FOOTER: 'Finaliza el',
+            DAYS_SPRINT_HINT: 'Establece cuantos días durara el Sprint',
+            RAGE_TIME: 'Escoje dentro de cuanto tiempo quieres que te enviemos la alerta',
+            COMMENTS: 'Comentarios',
+            ACTIONS: 'Acciónes',
+            ADJUST_TIME: 'Solicitar ajustar Horas',
+            BTNS: {
+                ADD: 'Agregar',
+                SEND: 'Enviar',
+                DELETE: 'Borrar',
+                UPDATE: 'Actualizar',
+                NEXT: 'Siguiente',
+                PREV: 'Anterior',
+                CLOSE: 'Cerrar',
+                SAVE: 'Guardar',
+                SEE: 'Ver',
+                EDIT: 'Editar',
+                ARCHIVE: 'Archivar',
+                DESACTIVATE: 'Desactivar',
+                YES: 'Si',
+                SELECT: 'Seleccionar',
+                UNARCHIVE: 'Ver Archivados',
+                HISTORY_HOURS: 'Historial de Horas',
+                SETTINGS: 'Ir a configuración',
+                NOTIFICATIONS: 'Ir a notificaciones',
+                PROJECTS: 'Ir al Proyecto',
+                TASKS: 'Ir a la tarea',
+                CHART_BOARD: 'Próximamente',
+                TASK_ARCHIVATED: 'Tareas archivadas',
+                CHANGE_VIEW_PROJECT: 'Cambiar de tablero',
+                CREATE_ALERT: 'Crear alerta',
+                FIN: 'Finalizar',
+                MOVE_LIST: 'Mover a',
+            },
+            SELECTS: {
+                PROJECT: 'Seleccióne un proyecto',
+                USER: 'Seleccióne un usuario',
+                TASK: 'Seleccióne una tarea',
+                ALL: 'Tod@s',
+            },
+        },
+        SIDEBAR: {
+            NAV: {
+                DASHBOARD: {
+                    TITLE: 'Dashboard',
+                },
+
+                CALENDAR: {
+                    TITLE: 'Mi Calendario',
+                },
+                BOARDS: {
+                    TITLE: 'Mis Tableros',
+                },
+                TEAM: {
+                    TITLE: 'Equipos',
+                },
+                USERS: {
+                    TITLE: 'Usuarios',
+                },
+                CLIENTS: {
+                    TITLE: 'Clientes',
+                },
+                PROJECT: {
+                    TITLE: 'Proyectos',
+                },
+                REPORTS: {
+                    TITLE: 'Informes',
+                },
+                INTEGRATIONS: {
+                    TITLE: 'Integraciones',
+                },
+                PLAN: {
+                    TITLE: 'Planes',
+                },
+                LOGOUT: {
+                    TITLE: 'Logout',
+                },
+                ORGANIZATION: {
+                    TITLE: 'Organizaciones',
+                },
+                SERVER_ON_LINE: {
+                    TITLE: 'Server On Line',
+                },
+                SERVER_OFF_LINE: {
+                    TITLE: 'Server Off Line',
+                },
+                TIMERS: {
+                    TITLE: 'Timers',
+                },
+
+                INVITATIONS: {
+                    TITLE: 'Invitaciones',
+                },
+                NOTIFICATIONS: {
+                    TITLE: 'Historial de notificaciones',
+                },
+                NOTI: {
+                    ACTIVE: 'Activadas',
+                    DESACTIVE: 'Desactivadas',
+                    NOTI: 'Notificaciones',
+                },
+            },
+        },
+        AUTH: {
+            TITLE: {
+                LOGIN: 'inicia sesión para continuar',
+                REGISTER: 'Regístrate para obtener tu cuenta',
+            },
+            ACTIVATING_ACCOUNT: 'Estamos activando su cuenta...',
+            MESSAGE_VERIFY_ACCOUNT: 'ESTAMOS VERIFICANDO TU CUENTA',
+            CREATE_PASSWORD: 'CREAR CONTRASEÑA',
+            BTN_FORGOT_PASS: 'ENVIAR LINK',
+            LINK_GO_LOGIN: 'VOLVER AL LOGIN',
+            TITLE_FORGOT_PASSWORD: 'RECUPERA TU CONTRASEÑA',
+            ACEPT_TERM: 'Aceptar',
+            TERM_ACCEPT: 'Debe aceptar los terminos y condiciones',
+            TERM: 'Politicas de privacidad',
+            ENTER: 'ENTRAR',
+            OR: 'O INGRESA CON',
+            LOGIN_FACEBOOK: 'Continuar con facebook',
+            LOGIN_GOOGLE: 'Continuar con google',
+            CREATE_ACCOUNT: 'Quiero registrarme',
+            OR_REGISTER: 'O REGÍSTRATE CON',
+            FORGOT: 'Olvidé mi contraseña',
+            RESEN_EMAIL_ACTIVATE: 'Reenviar correo de activación de cuenta',
+            LOGIN_ACCOUNT: '¿Ya tienes una cuenta? inicia sesión',
+        },
+    },
+};

@@ -1,1 +1,19 @@
-<p>sidebar works!</p>
+<div class="content-sidebar p-2">
+    <div class="header">
+        <div class="logo">
+            <img src="assets/images/logo/logo-red-icon.svg" alt="Sicrux" />
+        </div>
+    </div>
+    <div class="content-menu mt-3" fxLayout="column wrap" fxLayoutAlign="center center">
+        <a
+            *ngFor="let item of sidebar"
+            [matTooltip]="item.matTooltip | translate"
+            [matTooltipPosition]="item.matTooltipPosition"
+            [routerLink]="item.routerLink"
+            [routerLinkActive]="item.routerLinkActive"
+            [class]="item.class"
+        >
+            <mat-icon class="text-white">{{ item.icon }}</mat-icon>
+        </a>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+@import '~@angular/material/theming';
+@include mat-core();
+
+
+$theme-primary-ligh:    mat-palette($primary-theme);
+$theme-warn:            mat-palette($mat-red);
+$theme-accent-ligh:     mat-palette($accent-theme);
+
+// $theme: mat-light-theme($theme-primary-ligh, $theme-accent-ligh, $theme-warn);
+
+$theme: mat-light-theme(
+    (
+        color: (
+            primary:    $theme-primary-ligh,
+            warn:       $theme-warn,
+            accent:     $theme-accent-ligh,
+        ),
+    )
+);
+
+$theme-primary-dark:    mat-palette($mat-grey);
+$theme-warn-dark:            mat-palette($mat-red);
+$theme-accent-dark:     mat-palette($mat-blue);
+
+$theme-dark: mat-dark-theme($theme-primary-dark, $theme-accent-dark, $theme-warn-dark);
+
+@include angular-material-theme($theme);
+
+.mat-app-background {
+    background-color: $light-background;
+    color: $dark-primary-text;
+}
+
+.dark-theme-mode {
+    @include angular-material-theme($theme-dark);
+    .mat-app-background {
+        background-color: $dark-background;
+        color: $light-primary-text !important;
+    }
+    .text-secondary{
+        color: $light-primary-text !important;
+    }
+    .bg-white{
+        background-color:#16181d !important;
+    }
+    .bg-panels{
+        background-color:#16181d;
+        
+    }
+    .btn-google {
+        span {
+            color: $light-primary-text !important;
+        }
+    }
+    
+}

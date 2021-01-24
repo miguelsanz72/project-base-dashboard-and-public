@@ -5,31 +5,28 @@ import { LayoutComponent } from './layout.component';
 import { LayoutModule } from './layout/layout.module';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: LayoutComponent,
-    children: [
-      {
+    {
         path: '',
-        loadChildren: () =>
-          import('./pages/home/home.module').then((m) => m.HomeModule),
-      },
-      {
-        path: 'pages',
-        loadChildren: () =>
-          import('./pages/pages.module').then((m) => m.PagesModule),
-      },
-      {
-        path: 'auth',
-        loadChildren: () =>
-          import('./auth/auth.module').then((m) => m.AuthModule),
-      },
-    ],
-  },
+        component: LayoutComponent,
+        children: [
+            {
+                path: '',
+                loadChildren: () => import('./pages/home/home.module').then((m) => m.HomeModule),
+            },
+            {
+                path: 'pages',
+                loadChildren: () => import('./pages/pages.module').then((m) => m.PagesModule),
+            },
+            {
+                path: 'auth',
+                loadChildren: () => import('./auth/layout-auth.module').then((m) => m.LayoutAuthModule),
+            },
+        ],
+    },
 ];
 
 @NgModule({
-  declarations: [LayoutComponent],
-  imports: [CommonModule, RouterModule.forChild(routes), LayoutModule],
+    declarations: [LayoutComponent],
+    imports: [CommonModule, RouterModule.forChild(routes), LayoutModule],
 })
 export class PublicModule {}

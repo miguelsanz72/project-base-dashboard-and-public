@@ -17,17 +17,16 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "es2020",
-    "lib": [
-      "es2018",
-      "dom"
-    ],
+    "lib": ["es2018", "dom"],
     "paths": {
-      "@system": ["@system/"],
-      "@core/*": ["@system/core/*"],
-      "@lang/*": ["@system/lang/*"],
-      "@utils/*": ["@system/utils/*"],
-      "@components/*": ["app/main/components/*"]
-  }
+      "@theme": ["@theme/"],
+      "@core/*": ["@theme/core/*"],
+      "@lang/*": ["@theme/lang/*"],
+      "@utils/*": ["@theme/utils/*"],
+      "@styles/*": ["@theme/styles/*"],
+      "@components/*": ["app/components/*"],
+      "@models/*": ["app/models/*"]
+    }
   },
   "angularCompilerOptions": {
     "strictInjectionParameters": true,

@@ -1,0 +1,105 @@
+<div *ngIf="users.length > 0" class="users-avatars">
+    <div *ngFor="let user of users | slice: 0:6; let i = index">
+        <div *ngIf="user">
+            <div
+                *ngVar="user.photoURL | imgProfile as dataImage"
+                [matTooltip]="user.userName"
+                matTooltipPosition="above"
+            >
+                <span
+                    class="content-first-letter"
+                    *ngIf="(dataImage | typeof) === 'object'"
+                    [ngStyle]="{
+                        'background-color': dataImage.color,
+                        'min-width.px': width,
+                        'min-height.px': height,
+                        'max-width.px': width,
+                        'max-height.px': height
+                    }"
+                >
+                    {{ dataImage.user }}
+                </span>
+                <img
+                    *ngIf="(dataImage | typeof) === 'string'"
+                    src="{{ dataImage }}"
+                    alt="image"
+                    class="user-img"
+                    [width]="width"
+                    [height]="height"
+                />
+            </div>
+        </div>
+    </div>
+    <span *ngIf="users.length > 6" class="content-more text-secondary"> + {{ users.length - 6 }} </span>
+</div>
+
+<div *ngIf="user" class="users-avatars">
+    <div *ngVar="user.photoURL | imgProfile as dataImage" [matTooltip]="user.userName" matTooltipPosition="above">
+        <span
+            class="content-first-letter"
+            *ngIf="(dataImage | typeof) === 'object'"
+            [ngStyle]="{
+                'background-color': dataImage.color,
+                'min-width.px': width,
+                'min-height.px': height,
+                'max-width.px': width,
+                'max-height.px': height
+            }"
+        >
+            {{ dataImage.user }}
+        </span>
+        <img
+            *ngIf="(dataImage | typeof) === 'string'"
+            src="{{ dataImage }}"
+            alt="image"
+            class="user-img"
+            [width]="width"
+            [height]="height"
+        />
+    </div>
+</div>
+
+<div *ngIf="projects.length > 0" class="users-avatars">
+    <div *ngFor="let project of projects">
+        <div [matTooltip]="project.name" matTooltipPosition="above">
+            <span
+                class="content-first-letter"
+                [ngStyle]="{
+                    'background-color': project.color,
+                    'min-width.px': width,
+                    'min-height.px': height,
+                    'max-width.px': width,
+                    'max-height.px': height
+                }"
+            >
+                <a [routerLink]="['//dashboard/pages/projects/board/', project._id]">
+                    {{ project.name.charAt(0).toUpperCase() }}
+                </a>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div *ngIf="tasks.length > 0" class="users-avatars">
+    <div *ngFor="let task of tasks">
+        <div [matTooltip]="task.name" matTooltipPosition="above">
+            <span
+                class="content-first-letter"
+                [ngStyle]="{
+                    'background-color': task.project.color,
+                    'min-width.px': width,
+                    'min-height.px': height,
+                    'max-width.px': width,
+                    'max-height.px': height
+                }"
+            >
+                <a
+                    [routerLink]="['/dashboard/pages/projects/board/', task.project._id]"
+                    [queryParams]="{ openTask: task._id }"
+                >
+                    {{ task.name.charAt(0).toUpperCase() }}</a
+                >
+            </span>
+        </div>
+    </div>
+</div>

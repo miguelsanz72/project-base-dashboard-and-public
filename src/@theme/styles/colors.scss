@@ -1,0 +1,65 @@
+// Colors
+$dark-primary-text: #1e2129;
+$dark-background: #1e2228;
+$light-background: #f2f2f2;
+$light-primary-text: #ececee;
+
+$primary-theme: (
+    50: #f5fbff,
+    100: #f1f6fe,
+    200: #eaeff7,
+    300: #dce1e9,
+    400: #b9bec6,
+    500: #9b9fa7,
+    600: #72767e,
+    700: #72767e,
+    800: #3f434a,
+    900: #1e2228,
+    contrast: (50: $dark-primary-text,
+        100: $dark-primary-text,
+        200: $dark-primary-text,
+        300: $light-primary-text,
+        400: $light-primary-text,
+        500: $light-primary-text,
+        600: $light-primary-text,
+        700: $light-primary-text,
+        800: $light-primary-text,
+        900: $light-primary-text,
+    ),
+);
+
+$accent-theme: (50: #ffeaee,
+    100: #ffccd2,
+    200: #f1979a,
+    300: #e76e73,
+    400: #f24b50,
+    500: #f73635,
+    600: #e82b34,
+    700: #d61f2e,
+    800: #c91627,
+    900: #bb001a,
+    contrast: (50: $dark-primary-text,
+        100: $dark-primary-text,
+        200: $dark-primary-text,
+        300: $light-primary-text,
+        400: $light-primary-text,
+        500: $light-primary-text,
+        600: $light-primary-text,
+        700: $light-primary-text,
+        800: $light-primary-text,
+        900: $light-primary-text,
+    ),
+);
+
+$colors: (
+  redPrin: #e82b34,
+);
+
+@each $name, $value in $colors {
+  .color--#{$name} {
+    color: $value !important;
+  }
+  .bg-color--#{$name} {
+      background-color: $value !important;
+  }
+}

@@ -1,1 +1,37 @@
-<p>nav-bar works!</p>
+<nav class="py-2 px-3 nav-bar-dashboard" fxLayout="row wrap" fxLayoutAlign="space-between center">
+    <div class="profile-enterprise" fxLayout="row wrap" fxLayoutAlign="start center">
+        <app-icon-image-fisrt-letter [user]="userProfile" [width]="35" [height]="35"></app-icon-image-fisrt-letter>
+        <span class="mx-3" *ngIf="!user.user?.displayName"> {{ user.user?.userName }} </span>
+        <span class="mx-3" *ngIf="user.user?.displayName"> {{ user.user?.displayName }} </span>
+    </div>
+
+    <div class="profile-user" fxLayout="row wrap" fxLayoutAlign="end center">
+        <div
+            (click)="goToProfile()"
+            class="content-info-user cursor-pointer"
+            fxLayout="row wrap"
+            fxLayoutAlign="end center"
+        >
+            <span class="mx-2" *ngIf="!user.user?.displayName"> {{ user.user?.userName }} </span>
+            <span class="mx-2" *ngIf="user.user?.displayName"> {{ user.user?.displayName }} </span>
+            <app-icon-image-fisrt-letter [user]="userProfile" [width]="35" [height]="35"></app-icon-image-fisrt-letter>
+        </div>
+        <app-menu-icon [class]="'ms-2'"></app-menu-icon>
+
+        <div class="div">
+            <mat-icon></mat-icon>
+        </div>
+
+        <a
+            *ngIf="showNotifications"
+            class="content-spiner"
+            routerLink="/dashboard/pages/notifications"
+            matTooltip="{{ 'FORMS_BASIC.BTNS.NOTIFICATIONS' | translate }}"
+            matTooltipPosition="below"
+        >
+            <mat-icon class="text-secondary">notifications</mat-icon>
+
+            <div class="spinner-grow text-danger spinner-grow-sm spiner-position" role="status"></div>
+        </a>
+    </div>
+</nav>

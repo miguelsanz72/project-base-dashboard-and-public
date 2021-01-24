@@ -1,1 +1,64 @@
-<p>login works!</p>
+<form
+    [formGroup]="loginForm"
+    (ngSubmit)="login()"
+    novalidate
+    [@animate]="{ value: '*', params: { duration: '350ms', y: '100%' } }"
+>
+    <div *ngIf="loading" class="content-loading">
+        <app-loading></app-loading>
+    </div>
+    <span class="text-secondary text-center d-block mb-4">
+        {{ 'AUTH.TITLE.LOGIN' | translate }}
+    </span>
+    <app-form-email formControlName="email"></app-form-email>
+    <app-form-password [showConfirm]="false" formControlName="password"></app-form-password>
+    <div class="remember-forgot-password mb-2">
+        <mat-checkbox
+            color="warn"
+            formControlName="rememberme"
+            class="remember-me text-secondary"
+            aria-label="Remember Me"
+        >
+            {{ 'FORMS_BASIC.REMEMBERME' | translate }}
+        </mat-checkbox>
+    </div>
+    <div class="terms mb-2" fxLayout="row" fxLayoutAlign="center center">
+        <a class="ml-2 text-secondary" href="https://sicrux.com/politicas.html" target="_blank">{{
+            'AUTH.TERM' | translate
+        }}</a>
+    </div>
+
+    <app-button
+        [type]="'submit'"
+        [disabled]="loginForm.invalid"
+        [buttonType]="'normal'"
+        name="{{ 'AUTH.ENTER' | translate }}"
+        classes="w-100 mt-3 bg-color--redPrin"
+    ></app-button>
+
+    <span class="my-3 text-secondary d-block text-center">
+        {{ 'AUTH.OR' | translate }}
+    </span>
+    <app-button
+        [type]="'button'"
+        [buttonType]="'normal'"
+        name="{{ 'AUTH.LOGIN_GOOGLE' | translate }}"
+        classes="w-100 mt-3 btn-google box-shadow"
+        iconImage="assets/images/icons/icon-google.svg"
+    ></app-button>
+
+    <hr class="mt-4" />
+    <div class="content-links" fxLayout="row wrap" fxLayoutAlign="space-between center">
+        <div fxFlex="1 1 auto">
+            <a [routerLink]="['/auth/forgot-password']" class="text-center text-secondary text-decoration-none d-block">
+                {{ 'AUTH.FORGOT' | translate }}
+            </a>
+        </div>
+        <div fxFlex="1 1 auto" class="text-secondary separator-point text-center d-block">.</div>
+        <div fxFlex="1 1 auto">
+            <a [routerLink]="['/auth/register']" class="text-center text-secondary text-decoration-none d-block">
+                {{ 'AUTH.CREATE_ACCOUNT' | translate }}
+            </a>
+        </div>
+    </div>
+</form>

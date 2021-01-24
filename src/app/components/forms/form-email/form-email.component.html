@@ -1,0 +1,13 @@
+<div [formGroup]="form" fxLayout="row wrap">
+    <mat-form-field appearance="outline" fxFlex="100">
+        <mat-label>{{ 'FORMS_BASIC.EMAIL' | translate }}</mat-label>
+        <input matInput formControlName="email" type="email" />
+        <mat-icon matSuffix class="text-secondary">mail</mat-icon>
+        <mat-error *ngIf="emailControl.touched && emailControl.hasError('required')">
+            {{ 'FORMS_ERRORS.REQUIRED' | translate }}
+        </mat-error>
+        <mat-error *ngIf="emailControl.touched && !emailControl.hasError('required') && emailControl.hasError('email')">
+            {{ 'FORMS_ERRORS.EMAIL' | translate }}
+        </mat-error>
+    </mat-form-field>
+</div>

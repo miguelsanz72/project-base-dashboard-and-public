@@ -1,0 +1,23 @@
+<button
+    [type]="type"
+    mat-icon-button
+    (click)="event()"
+    [@animate]="{ value: '*', params: { delay: '300ms', scale: '0.2' } }"
+    [disabled]="disabled"
+    *ngIf="buttonType === 'icon'"
+    [class]="classes"
+>
+    <mat-icon>{{ icon }}</mat-icon>
+</button>
+
+<button
+    mat-button
+    (click)="event()"
+    [@animate]="{ value: '*', params: { delay: '300ms', scale: '0.2' } }"
+    [disabled]="disabled"
+    *ngIf="buttonType === 'normal'"
+    [class]="classes"
+>
+    <img class="me-2" *ngIf="iconImage.length > 0" [src]="iconImage" />
+    {{ name }}
+</button>
