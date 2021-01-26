@@ -1,0 +1,15 @@
+.content-chart {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    h3 {
+        flex: 1 0 100%;
+    }
+    .chart {
+        display: grid;
+        width: 600px;
+        height: 400px;
+        flex: 1 0 100%;
+    }
+}

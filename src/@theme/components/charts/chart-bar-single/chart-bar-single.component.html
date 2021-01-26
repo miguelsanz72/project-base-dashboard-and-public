@@ -1,0 +1,50 @@
+<div class="content-chart box-shadow">
+    <h3 class="text-center text-secondary m-0">{{ title }}</h3>
+    <div
+        *ngIf="typeChartShow === 'horizontal'"
+        class="content-widget-chart"
+        [ngStyle]="{
+            'height.px': height
+        }"
+    >
+        <ngx-charts-bar-horizontal
+            [scheme]="colorScheme"
+            [results]="data"
+            [gradient]="gradient"
+            [xAxis]="showXAxis"
+            [yAxis]="showYAxis"
+            [legend]="showLegend"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            (select)="onSelect($event)"
+            (activate)="onActivate($event)"
+            (deactivate)="onDeactivate($event)"
+        >
+        </ngx-charts-bar-horizontal>
+    </div>
+
+    <div
+        *ngIf="typeChartShow === 'vertical'"
+        class="content-widget-chart"
+        [ngStyle]="{
+            'height.px': height
+        }"
+    >
+        <ngx-charts-bar-vertical
+            [scheme]="colorScheme"
+            [results]="data"
+            [gradient]="gradient"
+            [xAxis]="showXAxis"
+            [yAxis]="showYAxis"
+            [legend]="showLegend"
+            [showXAxisLabel]="showXAxisLabel"
+            [showYAxisLabel]="showYAxisLabel"
+            [xAxisLabel]="xAxisLabel"
+            [yAxisLabel]="yAxisLabel"
+            (select)="onSelect($event)"
+            (activate)="onActivate($event)"
+            (deactivate)="onDeactivate($event)"
+        >
+        </ngx-charts-bar-vertical>
+    </div>
+</div>

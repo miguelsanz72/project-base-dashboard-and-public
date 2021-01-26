@@ -1,0 +1,23 @@
+<div class="content-chart-pie box-shadow">
+    <h3 class="text-center text-secondary m-0">{{ title }}</h3>
+    <div
+        class="content-widget-chart"
+        [ngStyle]="{
+            'height.px': height
+        }"
+    >
+        <ngx-charts-pie-chart
+            [scheme]="colorScheme"
+            [results]="data"
+            [gradient]="gradient"
+            [legend]="showLegend"
+            [legendPosition]="legendPosition"
+            [labels]="showLabels"
+            [doughnut]="isDoughnut"
+            [arcWidth]="arcWidth"
+            [customColors]="customColors"
+            (select)="onSelect($event)"
+        >
+        </ngx-charts-pie-chart>
+    </div>
+</div>

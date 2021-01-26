@@ -1,0 +1,10 @@
+<div class="content-chart box-shadow">
+    <div
+        class="content-widget-chart"
+        [ngStyle]="{
+            'height.px': height
+        }"
+    >
+        <ngx-charts-pie-grid [scheme]="colorScheme" [results]="data" (select)="onSelect($event)"> </ngx-charts-pie-grid>
+    </div>
+</div>

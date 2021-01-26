@@ -1,0 +1,13 @@
+.content-chart {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    padding: 10px;
+    border-radius: 5px;
+
+    .content-widget-chart {
+        display: grid;
+        width: 100%;
+        overflow: hidden;
+    }
+}
