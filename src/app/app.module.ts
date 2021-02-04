@@ -8,15 +8,23 @@ import { HttpClientModule } from '@angular/common/http';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { TranslatePipe } from '@ngx-translate/core';
+import { AppStoreModule } from './store/store.module';
 
 @NgModule({
-    declarations: [AppComponent],
-    imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, HttpClientModule, TranslateModule.forRoot()],
-    providers: [
-        {
-            provide: TranslatePipe,
-        },
-    ],
-    bootstrap: [AppComponent],
+  declarations: [AppComponent],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    TranslateModule.forRoot(),
+    AppStoreModule,
+  ],
+  providers: [
+    {
+      provide: TranslatePipe,
+    },
+  ],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
