@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { Result } from 'app/models/charters.model';
 
 @Component({
     selector: 'app-home',
@@ -7,7 +6,6 @@ import { Result } from 'app/models/charters.model';
     styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-    characters: Result[] = [];
     info: any;
 
     constructor() {}

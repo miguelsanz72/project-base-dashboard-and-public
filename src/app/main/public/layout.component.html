@@ -1,4 +1,7 @@
-<div class="dark-theme-mode">
+<div class="">
+    <div *ngIf="loading" class="content-loading">
+        <app-loading></app-loading>
+    </div>
     <!-- dark-theme-mode -->
     <div class="content-layout-public mat-app-background">
         <div fxLayout="row wrap">

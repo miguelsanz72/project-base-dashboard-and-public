@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './layout.component';
 import { LayoutModule } from './layout/layout.module';
+import { ComponentsModuleTheme } from '@theme/components/components.module';
 
 const routes: Routes = [
     {
@@ -27,6 +28,6 @@ const routes: Routes = [
 
 @NgModule({
     declarations: [LayoutComponent],
-    imports: [CommonModule, RouterModule.forChild(routes), LayoutModule],
+    imports: [CommonModule, RouterModule.forChild(routes), LayoutModule, ComponentsModuleTheme],
 })
 export class PublicModule {}

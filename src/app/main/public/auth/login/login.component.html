@@ -4,9 +4,6 @@
     novalidate
     [@animate]="{ value: '*', params: { duration: '350ms', y: '100%' } }"
 >
-    <div *ngIf="loading" class="content-loading">
-        <app-loading></app-loading>
-    </div>
     <span class="text-secondary text-center d-block mb-4">
         {{ 'AUTH.TITLE.LOGIN' | translate }}
     </span>

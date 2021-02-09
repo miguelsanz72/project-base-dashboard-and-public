@@ -2,10 +2,6 @@ import { ChangeDetectionStrategy, Component, forwardRef, OnDestroy, OnInit } fro
 import { FormBuilder, FormControl, FormGroup, NG_VALIDATORS, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
-export interface IformLogin {
-    email: string;
-}
-
 @Component({
     selector: 'app-form-email',
     templateUrl: './form-email.component.html',

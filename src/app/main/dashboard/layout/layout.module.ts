@@ -5,16 +5,11 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { FooterComponent } from './footer/footer.component';
 import { SystemModule } from '@theme/system.module';
 import { TranslateModule } from '@ngx-translate/core';
-import { ComponentsModule } from '@components/components.module';
+import { ComponentsModule } from '@components';
 
 @NgModule({
-  declarations: [NavBarComponent, SidebarComponent, FooterComponent],
-  exports: [NavBarComponent, SidebarComponent, FooterComponent],
-  imports: [
-    CommonModule,
-    SystemModule,
-    TranslateModule.forChild(),
-    ComponentsModule,
-  ],
+    declarations: [NavBarComponent, SidebarComponent, FooterComponent],
+    exports: [NavBarComponent, SidebarComponent, FooterComponent],
+    imports: [CommonModule, SystemModule, TranslateModule.forChild(), ComponentsModule],
 })
 export class LayoutModule {}

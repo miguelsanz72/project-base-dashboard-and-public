@@ -5,10 +5,12 @@ import { MenuIconComponent } from './menu-icon/menu-icon.component';
 import { MaterialModule } from '@theme/material.module';
 import { ButtonComponent } from './button/button.component';
 import { ChartsModule } from './charts/charts.module';
+import { StoreModule } from '@ngrx/store';
+import { uiReducer } from '@reducers';
 
 @NgModule({
-  declarations: [LoadingComponent, MenuIconComponent, ButtonComponent],
-  imports: [CommonModule, MaterialModule, ChartsModule],
-  exports: [LoadingComponent, MenuIconComponent, ButtonComponent, ChartsModule],
+    declarations: [LoadingComponent, MenuIconComponent, ButtonComponent],
+    imports: [CommonModule, MaterialModule, ChartsModule, StoreModule.forFeature('UI', uiReducer)],
+    exports: [LoadingComponent, MenuIconComponent, ButtonComponent, ChartsModule],
 })
 export class ComponentsModuleTheme {}

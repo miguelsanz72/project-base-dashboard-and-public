@@ -19,6 +19,7 @@ export const metaReducers: MetaReducer<any>[] = !environment.production ? [store
                 strictStateImmutability: true,
             },
         }),
+
         EffectsModule.forRoot(effects),
         !environment.production ? StoreDevtoolsModule.instrument() : [],
 
@@ -28,6 +29,7 @@ export const metaReducers: MetaReducer<any>[] = !environment.production ? [store
             logOnly: environment.production, // Restrict extension to log-only mode
         }),
     ],
+
     providers: [
         {
             provide: RouterStateSerializer,

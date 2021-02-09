@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IChartSimple } from '@system/models';
+import { IChartSimple } from '@theme/models';
 import { dataSingle } from '../fake';
 @Component({
     selector: 'chart-pie-grid',

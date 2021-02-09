@@ -6,20 +6,20 @@ import { AuthIlustrationsFooterComponent } from './auth-ilustrations-footer/auth
 import { SystemModule } from '@theme/system.module';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: LayoutAuthComponent,
-    children: [
-      {
+    {
         path: '',
-        loadChildren: () => import('./auth.module').then((m) => m.AuthModule),
-      },
-    ],
-  },
+        component: LayoutAuthComponent,
+        children: [
+            {
+                path: '',
+                loadChildren: () => import('./auth.module').then((m) => m.AuthModule),
+            },
+        ],
+    },
 ];
 
 @NgModule({
-  declarations: [LayoutAuthComponent, AuthIlustrationsFooterComponent],
-  imports: [CommonModule, RouterModule.forChild(routes), SystemModule],
+    declarations: [LayoutAuthComponent, AuthIlustrationsFooterComponent],
+    imports: [CommonModule, RouterModule.forChild(routes), SystemModule],
 })
 export class LayoutAuthModule {}

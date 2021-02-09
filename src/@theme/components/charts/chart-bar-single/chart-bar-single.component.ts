@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IChartSimple, TypeChartBar } from '@system/models';
+import { IChartSimple, TypeChartBar } from '@theme/models';
 import { dataSingle } from '../fake';
 
 @Component({

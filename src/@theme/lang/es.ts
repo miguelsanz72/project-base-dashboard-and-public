@@ -72,6 +72,10 @@ export const locale = {
                 ALL: 'Tod@s',
             },
         },
+        DATA_TABLE: {
+            FILTER_NOT_FOUND: 'No hay datos que coincidan con el filtro',
+            TITLE_PAGE: 'Usuarios',
+        },
         SIDEBAR: {
             NAV: {
                 DASHBOARD: {

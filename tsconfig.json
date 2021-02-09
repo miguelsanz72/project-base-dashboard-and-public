@@ -1,36 +1,42 @@
 /* To learn more about this file see: https://angular.io/config/tsconfig. */
 {
-  "compileOnSave": false,
-  "compilerOptions": {
-    "baseUrl": "./src",
-    "outDir": "./dist/out-tsc",
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "sourceMap": true,
-    "declaration": false,
-    "downlevelIteration": true,
-    "experimentalDecorators": true,
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "importHelpers": true,
-    "target": "es2015",
-    "module": "es2020",
-    "lib": ["es2018", "dom"],
-    "paths": {
-      "@theme": ["@theme/"],
-      "@core/*": ["@theme/core/*"],
-      "@lang/*": ["@theme/lang/*"],
-      "@utils/*": ["@theme/utils/*"],
-      "@styles/*": ["@theme/styles/*"],
-      "@components/*": ["app/components/*"],
-      "@models/*": ["app/models/*"]
+    "compileOnSave": false,
+    "compilerOptions": {
+        "baseUrl": "./src",
+        "outDir": "./dist/out-tsc",
+        "forceConsistentCasingInFileNames": true,
+        "strict": true,
+        "noImplicitReturns": true,
+        "noFallthroughCasesInSwitch": true,
+        "sourceMap": true,
+        "declaration": false,
+        "downlevelIteration": true,
+        "experimentalDecorators": true,
+        "moduleResolution": "node",
+        "esModuleInterop": true,
+        "importHelpers": true,
+        "target": "es2015",
+        "module": "es2020",
+        "lib": ["es2018", "dom"],
+        "paths": {
+            "@theme": ["@theme/"],
+            "@core*": ["app/core/index"],
+            "@lang/*": ["@theme/lang/*"],
+            "@utils*": ["@theme/utils/index"],
+            "@styles/*": ["@theme/styles/*"],
+            "@components*": ["app/components/index"],
+            "@componentsTheme*": ["@theme/components/index"],
+            "@models*": ["app/models/index"],
+            "@services*": ["app/services/index"],
+            "@reducers*": ["app/store/reducers/index"],
+            "@actions*": ["app/store/actions/index"],
+            "@effects*": ["app/stores/effects/index"]
+        }
+    },
+    "include": ["src/**/*.ts", "tests/**/*.ts"],
+    "angularCompilerOptions": {
+        "strictInjectionParameters": true,
+        "strictInputAccessModifiers": true,
+        "strictTemplates": true
     }
-  },
-  "angularCompilerOptions": {
-    "strictInjectionParameters": true,
-    "strictInputAccessModifiers": true,
-    "strictTemplates": true
-  }
 }

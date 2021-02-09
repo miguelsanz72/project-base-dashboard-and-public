@@ -6,33 +6,24 @@ import { LayoutModule } from './layout/layout.module';
 import { SystemModule } from '@theme/system.module';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: ContentComponent,
-    children: [
-      {
+    {
         path: '',
-        loadChildren: () =>
-          import('./pages/dashboard/dashboard.module').then(
-            (m) => m.DashboardModule
-          ),
-      },
-      {
-        path: 'pages',
-        loadChildren: () =>
-          import('./pages/pages.module').then((m) => m.PagesModule),
-      },
-    ],
-  },
+        component: ContentComponent,
+        children: [
+            {
+                path: '',
+                loadChildren: () => import('./pages/dashboard/dashboard.module').then((m) => m.DashboardModule),
+            },
+            {
+                path: 'pages',
+                loadChildren: () => import('./pages/pages.module').then((m) => m.PagesModule),
+            },
+        ],
+    },
 ];
 
 @NgModule({
-  declarations: [ContentComponent],
-  imports: [
-    CommonModule,
-    RouterModule.forChild(routes),
-    LayoutModule,
-    SystemModule,
-  ],
+    declarations: [ContentComponent],
+    imports: [CommonModule, RouterModule.forChild(routes), LayoutModule, SystemModule],
 })
 export class DashboardModule {}

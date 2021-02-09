@@ -1,0 +1,81 @@
+<div class="content-data-table scroll-y">
+    <table #table mat-table [dataSource]="dataSource" class="mt-3 table-data-table">
+        <!-- Profile Column -->
+        <ng-container *ngFor="let disCol of displayedColumns; let colIndex = index" matColumnDef="{{ disCol }}">
+            <th
+                class="t-body-th-data-table"
+                mat-header-cell
+                *matHeaderCellDef
+                [fxHide.xs]="disCol === 'projectsAsigned' || disCol === 'taskInWorkingProgress' || disCol === 'email'"
+            >
+                {{ disCol | translate }}
+            </th>
+
+            <td
+                class="t-body-td-data-table"
+                mat-cell
+                *matCellDef="let element"
+                [fxHide.xs]="
+                    (element[disCol] | typeof) === 'Project' ||
+                    (element[disCol] | typeof) === 'Task' ||
+                    (element[disCol] | typeof) === 'undefined' ||
+                    (element[disCol] | typeof) === 'Email'
+                "
+            >
+                <span class="t-body-span-data-table" *ngIf="(element[disCol] | typeof) === 'undefined'">
+                    <small class="text-center text-secondary"> </small>
+                </span>
+                <span
+                    class="t-body-span-data-table"
+                    *ngIf="(element[disCol] | typeof) === 'string' || (element[disCol] | typeof) === 'Email'"
+                >
+                    <div *ngVar="element[disCol] | filterColor as dataInput">
+                        <small
+                            (click)="click(element)"
+                            *ngIf="dataInput"
+                            class="color-rounded cursor-pointer"
+                            [style.background]="element[disCol]"
+                        ></small>
+                        <small *ngIf="!dataInput" class="ml-2"> {{ element[disCol] }}</small>
+                    </div>
+                </span>
+                <span
+                    class="t-body-span-data-table"
+                    *ngIf="(element[disCol] | typeof) === 'boolean'"
+                    fxLayoutAlign="center center"
+                    ><mat-slide-toggle
+                        (change)="changeSlide(element, $event.checked)"
+                        color="accent"
+                        [checked]="element[disCol]"
+                    ></mat-slide-toggle>
+                </span>
+                <span
+                    (click)="click(element)"
+                    class="t-body-span-data-table"
+                    *ngIf="(element[disCol] | typeof) === 'object'"
+                >
+                    <div *ngVar="element[disCol] | imgProfile as dataImage">
+                        <small
+                            *ngIf="(dataImage | typeof) === 'object'"
+                            [style.background]="dataImage.color"
+                            class="profile-user-list"
+                        >
+                            {{ dataImage.user }}
+                        </small>
+                        <div *ngIf="(dataImage | typeof) === 'string'">
+                            <img [src]="element[disCol] | imgProfile" class="img-profile" />
+                        </div>
+                    </div>
+                </span>
+            </td>
+        </ng-container>
+
+        <tr class="t-head-data-table" mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr class="t-body-tr-data-table" mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+        <!-- Row shown when there is no matching data. -->
+        <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4">{{ 'DATA_TABLE.FILTER_NOT_FOUND' | translate }} "{{ searchTerm }}"</td>
+        </tr>
+    </table>
+</div>

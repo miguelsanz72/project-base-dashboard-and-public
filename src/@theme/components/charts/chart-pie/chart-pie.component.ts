@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IChartSimple, IcustomColorsChart } from '@system/models';
+import { IChartSimple, IcustomColorsChart } from '@theme/models';
 import { colorsChart, dataSingle } from '../fake';
 
 @Component({

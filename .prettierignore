@@ -1,0 +1,5 @@
+# Ignore artifacts:
+public/ws
+src/app/models/*
+src/@theme/styles/theme.scss
+src/@theme/styles/colors.scss

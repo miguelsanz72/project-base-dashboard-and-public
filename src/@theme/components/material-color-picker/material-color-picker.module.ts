@@ -11,16 +11,16 @@ import { SystemPipesModule } from '@theme/pipes/pipes.module';
 import { SystemMaterialColorPickerComponent } from '@theme/components/material-color-picker/material-color-picker.component';
 
 @NgModule({
-  declarations: [SystemMaterialColorPickerComponent],
-  imports: [
-    CommonModule,
-    FlexLayoutModule,
-    MatButtonModule,
-    MatIconModule,
-    MatMenuModule,
-    MatTooltipModule,
-    SystemPipesModule,
-  ],
-  exports: [SystemMaterialColorPickerComponent],
+    declarations: [SystemMaterialColorPickerComponent],
+    imports: [
+        CommonModule,
+        FlexLayoutModule,
+        MatButtonModule,
+        MatIconModule,
+        MatMenuModule,
+        MatTooltipModule,
+        SystemPipesModule,
+    ],
+    exports: [SystemMaterialColorPickerComponent],
 })
 export class SicruxMaterialColorPickerModule {}

@@ -2,11 +2,6 @@ import { ChangeDetectionStrategy, Component, forwardRef, Input, OnDestroy, OnIni
 import { FormBuilder, FormControl, FormGroup, NG_VALIDATORS, NG_VALUE_ACCESSOR, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 
-export interface IformLogin {
-    password: string;
-    passwordConfirm: string;
-}
-
 @Component({
     selector: 'app-form-password',
     templateUrl: './form-password.component.html',

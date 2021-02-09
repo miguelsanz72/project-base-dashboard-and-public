@@ -8,20 +8,31 @@ import { SystemModule } from '@theme/system.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { FormEmailComponent } from './forms/form-email/form-email.component';
 import { FormPasswordComponent } from './forms/form-password/form-password.component';
+import { DataTableComponent } from './data-table/data-table.component';
+import { HeaderPagesComponent } from './header-pages/header-pages.component';
+import { BarAdvanceComponent } from './bar-advance/bar-advance.component';
+import { WhiteScreenComponent } from './white-screen/white-screen.component';
 
 @NgModule({
-  declarations: [
-    IconImageFisrtLetterComponent,
-    CardS1Component,
-    CardS2Component,
-    FormEmailComponent,
-    FormPasswordComponent,
-  ],
-  exports: [
-    IconImageFisrtLetterComponent,
-    FormEmailComponent,
-    FormPasswordComponent,
-  ],
-  imports: [CommonModule, SystemModule, TranslateModule.forChild()],
+    declarations: [
+        IconImageFisrtLetterComponent,
+        CardS1Component,
+        CardS2Component,
+        FormEmailComponent,
+        FormPasswordComponent,
+        DataTableComponent,
+        HeaderPagesComponent,
+        BarAdvanceComponent,
+        WhiteScreenComponent,
+    ],
+    exports: [
+        IconImageFisrtLetterComponent,
+        FormEmailComponent,
+        FormPasswordComponent,
+        HeaderPagesComponent,
+        BarAdvanceComponent,
+        WhiteScreenComponent,
+    ],
+    imports: [CommonModule, SystemModule, TranslateModule.forChild()],
 })
 export class ComponentsModule {}

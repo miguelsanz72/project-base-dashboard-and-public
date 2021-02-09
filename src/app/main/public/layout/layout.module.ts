@@ -5,8 +5,8 @@ import { FooterComponent } from './footer/footer.component';
 import { SystemModule } from '@theme/system.module';
 
 @NgModule({
-  declarations: [NavBarComponent, FooterComponent],
-  exports: [NavBarComponent, FooterComponent],
-  imports: [CommonModule, SystemModule],
+    declarations: [NavBarComponent, FooterComponent],
+    exports: [NavBarComponent, FooterComponent],
+    imports: [CommonModule, SystemModule],
 })
 export class LayoutModule {}

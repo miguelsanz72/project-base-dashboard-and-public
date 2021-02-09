@@ -1,0 +1,39 @@
+<div
+    *ngIf="totalInseconds"
+    class="progress"
+    matTooltip="{{ actual / 3600 | number: '.0-1' }} HH / {{ total }} HH"
+    matTooltipPosition="above"
+>
+    <div
+        class="progress-bar bg-primary"
+        role="progressbar"
+        [style.width]="percentAdvance * 100 + '%'"
+        [attr.aria-valuenow]="percentAdvance * 100"
+        aria-valuemin="0"
+        aria-valuemax="100"
+        [ngClass]="colorAdvance"
+    >
+        {{ percentAdvance | percent }}
+    </div>
+</div>
+
+<div *ngVar="actual | typeof as dataActual">
+    <div
+        *ngIf="!totalInseconds && dataActual !== 'project'"
+        class="progress"
+        matTooltip="{{ actual | number: '.0-1' }} HH / {{ total }} HH"
+        matTooltipPosition="above"
+    >
+        <div
+            class="progress-bar bg-primary"
+            role="progressbar"
+            [style.width]="percentAdvance * 100 + '%'"
+            [attr.aria-valuenow]="percentAdvance * 100"
+            aria-valuemin="0"
+            aria-valuemax="100"
+            [ngClass]="colorAdvance"
+        >
+            {{ percentAdvance | percent }}
+        </div>
+    </div>
+</div>
