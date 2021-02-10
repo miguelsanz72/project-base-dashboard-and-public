@@ -3,16 +3,17 @@ import { EffectsModule } from '@ngrx/effects';
 import { MetaReducer, StoreModule } from '@ngrx/store';
 import { NgModule } from '@angular/core';
 import { storeFreeze } from 'ngrx-store-freeze';
-import { RouterStateSerializer, StoreRouterConnectingModule } from '@ngrx/router-store';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
 
 import { environment } from 'environments/environment';
-import { reducers, effects, CustomSerializer } from 'app/store';
+import { appReducers } from './app.reducer';
+import { effects } from 'app/store';
 
 export const metaReducers: MetaReducer<any>[] = !environment.production ? [storeFreeze] : [];
 
 @NgModule({
     imports: [
-        StoreModule.forRoot(reducers, {
+        StoreModule.forRoot(appReducers, {
             metaReducers,
             runtimeChecks: {
                 strictActionImmutability: true,
@@ -30,11 +31,6 @@ export const metaReducers: MetaReducer<any>[] = !environment.production ? [store
         }),
     ],
 
-    providers: [
-        {
-            provide: RouterStateSerializer,
-            useClass: CustomSerializer,
-        },
-    ],
+    providers: [],
 })
 export class AppStoreModule {}

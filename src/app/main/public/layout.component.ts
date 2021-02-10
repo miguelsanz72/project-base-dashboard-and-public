@@ -1,10 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { UIStateApp } from '@reducers';
 import { AlertsService } from '@services';
-
+import { AppState } from 'app/store';
 import { Subscription } from 'rxjs';
-import { SweetAlertIcon } from 'sweetalert2';
 
 @Component({
     selector: 'app-layout',
@@ -14,7 +12,7 @@ import { SweetAlertIcon } from 'sweetalert2';
 export class LayoutComponent implements OnInit, OnDestroy {
     loading: boolean;
     suscription: Subscription;
-    constructor(private store: Store<UIStateApp>, private _alertsService: AlertsService) {
+    constructor(private store: Store<AppState>, private _alertsService: AlertsService) {
         this.loading = false;
         this.suscription = new Subscription();
     }

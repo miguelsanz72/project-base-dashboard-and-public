@@ -1,11 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Store } from '@ngrx/store';
-import { AlertsService } from '@services';
-import { IAuthState } from 'app/store';
 import * as actions from '@actions';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { AppState } from 'app/store/app.reducer';
 @Component({
     selector: 'app-activate-account',
     templateUrl: './activate-account.component.html',
@@ -13,16 +12,16 @@ import { takeUntil } from 'rxjs/operators';
 })
 export class ActivateAccountComponent implements OnInit, OnDestroy {
     private _unsubscribeAll: Subject<any>;
-    constructor(private activateRoute: ActivatedRoute, private router: Router, private store: Store<IAuthState>) {
+    constructor(private activateRoute: ActivatedRoute, private router: Router, private store: Store<AppState>) {
         this._unsubscribeAll = new Subject();
         this.activateRoute.params.subscribe((params) => {
             const token: string = params.token;
             this.store.dispatch(actions.activateAccount({ token }));
             this.store
-                .select('token')
+                .select('USER')
                 .pipe(takeUntil(this._unsubscribeAll))
                 .subscribe({
-                    next: (token) => {
+                    next: ({ token }) => {
                         if (token !== null) {
                             this.router.navigate(['/dashboard']);
                         }

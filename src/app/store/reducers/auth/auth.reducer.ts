@@ -1,18 +1,13 @@
 import { IUser, userDefault } from '@models';
 import { createReducer, on } from '@ngrx/store';
 import * as actions from '@actions';
-import { AppState } from '../app.reducer.ts';
 
-export interface IAuthState {
+export interface AuthState {
     token: string | null;
     userOrg: IUser | null;
 }
 
-export interface AuthStateApp extends AppState {
-    USER: IAuthState;
-}
-
-export const authInitialState: IAuthState = {
+export const authInitialState: AuthState = {
     token: null,
     userOrg: userDefault,
 };
@@ -27,6 +22,6 @@ const _authReducer = createReducer(
     }))
 );
 
-export function authReducerReducer(state: IAuthState, action: any) {
+export function authReducer(state: any, action: any) {
     return _authReducer(state, action);
 }

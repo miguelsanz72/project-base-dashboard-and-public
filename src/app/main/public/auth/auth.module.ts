@@ -11,7 +11,6 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
 import { ActivateAccountComponent } from './activate-account/activate-account.component';
 import { ComponentsModuleTheme } from '@theme/components/components.module';
 import { StoreModule } from '@ngrx/store';
-import { authReducerReducer } from '@reducers*';
 
 const routes: Routes = [
     {
@@ -52,7 +51,6 @@ const routes: Routes = [
         TranslateModule.forChild(),
         ComponentsModule,
         ComponentsModuleTheme,
-        StoreModule.forFeature('USER', authReducerReducer),
     ],
 })
 export class AuthModule {}

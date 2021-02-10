@@ -1,17 +1,11 @@
 import { createReducer, on } from '@ngrx/store';
 import * as actions from '@actions';
-import { AppState } from '@reducers';
 import { IErrorApi } from '@models';
-import { state } from '@angular/animations';
 
 export interface UIState {
     isLoading: boolean;
     message: string;
     err: IErrorApi | null | undefined;
-}
-
-export interface UIStateApp extends AppState {
-    UI: UIState;
 }
 
 export const initialState: UIState = {

@@ -1,17 +1,17 @@
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpParams, HttpRequest, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { UIStateApp } from 'app/store';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import * as actions from '@actions';
+import { AppState } from 'app/store';
 @Injectable({
     providedIn: 'root',
 })
 export class RequestsInterceptorService implements HttpInterceptor {
     token: string;
 
-    constructor(private store: Store<UIStateApp>) {
+    constructor(private store: Store<AppState>) {
         const token = localStorage.getItem('token');
         if (token) this.token = token;
         else this.token = '';

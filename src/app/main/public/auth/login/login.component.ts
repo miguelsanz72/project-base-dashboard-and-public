@@ -3,10 +3,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import { systemAnimations } from '@theme/animations';
 import * as actions from '@actions';
-import { AuthStateApp } from '@reducers';
 import { IUserAuth, userDefault } from '@models';
 import { Subscription } from 'rxjs';
 import { Router } from '@angular/router';
+import { AppState } from 'app/store';
 
 @Component({
     selector: 'app-login',
@@ -17,7 +17,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit, OnDestroy {
     loginForm: FormGroup;
     suscription: Subscription;
-    constructor(private formBuilder: FormBuilder, private store: Store<AuthStateApp>, private router: Router) {
+    constructor(private formBuilder: FormBuilder, private store: Store<AppState>, private router: Router) {
         this.suscription = new Subscription();
         this.loginForm = this.formBuilder.group({
             email: ['', Validators.required],
