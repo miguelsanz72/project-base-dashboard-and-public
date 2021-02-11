@@ -30,7 +30,8 @@
             "@services*": ["app/services/index"],
             "@reducers*": ["app/store/reducers/index"],
             "@actions*": ["app/store/actions/index"],
-            "@effects*": ["app/stores/effects/index"]
+            "@effects*": ["app/stores/effects/index"],
+            "crypto": ["../node_modules/crypto-js"]
         }
     },
     "include": ["src/**/*.ts", "tests/**/*.ts"],
