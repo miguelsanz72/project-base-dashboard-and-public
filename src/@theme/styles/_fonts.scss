@@ -27,3 +27,23 @@ body {
         font-family: $primaryFont;
     }
 }
+
+$fontSize: (
+    1: 1em,
+    12: 1.2em,
+    15: 1.5em,
+    2: 2em,
+    25: 2.5em,
+    3: 3em,
+    35: 3.5em,
+    4: 4em,
+    45: 4.5em,
+    5: 5em,
+    55: 5.5em,
+);
+
+@each $name, $value in $fontSize {
+    .fz--#{$name} {
+        font-size: $value !important;
+    }
+}

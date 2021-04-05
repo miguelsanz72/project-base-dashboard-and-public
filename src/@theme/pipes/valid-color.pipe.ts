@@ -1,9 +1,9 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-    name: 'filterColor',
+    name: 'validColor',
 })
-export class FilterColorPipe implements PipeTransform {
+export class ValidColorPipe implements PipeTransform {
     transform(value: any, ...args: unknown[]): unknown {
         const s = new Option().style;
         s.color = value;

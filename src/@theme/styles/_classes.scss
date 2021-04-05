@@ -28,3 +28,84 @@
     align-items: center;
     z-index: 99999;
 }
+
+.content-dialog-confirm {
+    width: 40%;
+    @media all and( max-width: 576px  ) {
+        width: 100%;
+        left: 6%;
+        position: relative !important;
+    }
+}
+
+.profile-user-list {
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    border-radius: 100%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700 !important;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.text-bold {
+    font-weight: 600;
+}
+
+.img-profile {
+    border-radius: 5px;
+    object-fit: contain;
+}
+
+.color-rounded {
+    height: 30px;
+    width: 30px;
+    display: block;
+    border-radius: 50%;
+}
+
+@each $name, $value in $colors {
+    .color--#{$name} {
+        color: $value !important;
+    }
+    .bg-color--#{$name} {
+        background-color: $value !important;
+    }
+}
+
+@for $i from 1 through 100 {
+    .min-width--#{$i} {
+        min-width: round(percentage($i/100));
+    }
+}
+
+@for $i from 1 through 1000 {
+    .min-height--#{$i} {
+        min-height: #{$i}px;
+    }
+}
+
+.overflow-x-hidden {
+    overflow-x: hidden;
+}
+
+.overflow-y-hidden {
+    overflow-y: hidden;
+}
+
+.overflow-x-auto {
+    overflow-x: auto;
+}
+
+.overflow-y-auto {
+    overflow-y: auto;
+}

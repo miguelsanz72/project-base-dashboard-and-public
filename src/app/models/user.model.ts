@@ -3,7 +3,8 @@ if (typeof Intl === 'object' && typeof Intl.DateTimeFormat === 'function') {
     timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 }
 
-export type Role = 'admin' | 'superAdmin' | 'user';
+export type TUserRole = 'admin' | 'user' | 'superAdmin' | 'client' | 'invited';
+
 export interface IUserAuth {
     email:       string;
     password:    string;
@@ -19,6 +20,7 @@ export interface IUser {
     email:          string;
     userName:       string;
     timeZone:       string;
+    role:           TUserRole
 }
 
 export interface PhotoURL {
@@ -41,6 +43,7 @@ export const userDefault: IUser= {
     photoURL    : { name: 'no-image', color: '#056AA7', user: 'A'},
     email       : 'email@default.com', 
     userName    : 'UserName',
-    timeZone
+    timeZone,
+    role        : 'user'
 }
 

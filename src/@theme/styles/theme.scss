@@ -20,7 +20,8 @@ $theme: mat-light-theme(
 
 $theme-primary-dark:    mat-palette($mat-grey);
 $theme-warn-dark:       mat-palette($mat-red);
-$theme-accent-dark:     mat-palette($mat-blue);
+// $theme-accent-dark:     mat-palette($mat-blue);
+$theme-accent-dark:     mat-palette($accent-theme);
 
 $theme-dark: mat-dark-theme($theme-primary-dark, $theme-accent-dark, $theme-warn-dark);
 

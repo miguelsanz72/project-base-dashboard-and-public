@@ -29,7 +29,7 @@
                     class="t-body-span-data-table"
                     *ngIf="(element[disCol] | typeof) === 'string' || (element[disCol] | typeof) === 'Email'"
                 >
-                    <div *ngVar="element[disCol] | filterColor as dataInput">
+                    <div *ngVar="element[disCol] | validColor as dataInput">
                         <small
                             (click)="click(element)"
                             *ngIf="dataInput"

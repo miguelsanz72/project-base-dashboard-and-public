@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ContentComponent } from './content.component';
 import { RouterModule, Routes } from '@angular/router';
 import { LayoutModule } from './layout/layout.module';
-import { SystemModule } from '@theme/system.module';
+import { ThemeModule } from '@theme/theme.module';
 
 const routes: Routes = [
     {
@@ -24,6 +24,6 @@ const routes: Routes = [
 
 @NgModule({
     declarations: [ContentComponent],
-    imports: [CommonModule, RouterModule.forChild(routes), LayoutModule, SystemModule],
+    imports: [CommonModule, RouterModule.forChild(routes), LayoutModule, ThemeModule],
 })
 export class DashboardModule {}

@@ -3,13 +3,13 @@ import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { RouterModule, Routes } from '@angular/router';
-import { SystemModule } from '@theme/system.module';
+import { ThemeModule } from '@theme/theme.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { ComponentsModule } from '@components/components.module';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { ActivateAccountComponent } from './activate-account/activate-account.component';
-import { ComponentsModuleTheme } from '@theme/components/components.module';
+import { ComponentsModuleTheme } from '@theme/components';
 import { StoreModule } from '@ngrx/store';
 
 const routes: Routes = [
@@ -47,7 +47,7 @@ const routes: Routes = [
     imports: [
         CommonModule,
         RouterModule.forChild(routes),
-        SystemModule,
+        ThemeModule,
         TranslateModule.forChild(),
         ComponentsModule,
         ComponentsModuleTheme,

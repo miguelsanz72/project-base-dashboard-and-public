@@ -8,6 +8,7 @@ import * as actions from '@actions';
 import * as crypto from 'crypto-js';
 import { Store } from '@ngrx/store';
 import { AppState } from 'app/store';
+import { Router } from '@angular/router';
 
 @Injectable({
     providedIn: 'root',
@@ -16,7 +17,7 @@ export class AuthService {
     ver = '0.1.0';
     urlApi = environment.url_api;
     secret = environment.SEED;
-    constructor(private http: HttpClient, private store: Store<AppState>) {
+    constructor(private http: HttpClient, private store: Store<AppState>, private router: Router) {
         this.loadUser();
     }
 
@@ -61,6 +62,13 @@ export class AuthService {
                 return resp;
             })
         );
+    }
+
+    logout(): void {
+        localStorage.removeItem('token');
+        localStorage.removeItem('userOrg');
+        // this._auth.signOut();
+        this.router.navigate(['/auth/login']);
     }
 
     saveStorage(token: string, user: IUser): void {
