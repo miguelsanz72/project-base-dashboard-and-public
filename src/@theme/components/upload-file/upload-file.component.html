@@ -1,0 +1,35 @@
+<div fxLayout="row wrap" fxLayoutAlign="center center">
+    <div *ngVar="imagePlace | imgProfile as dataImage" class="content-modal">
+        <div
+            *ngIf="(dataImage | typeof) === 'object'"
+            fxLayout="row wrap"
+            fxLayoutAlign="center center"
+            class="profile-user-list"
+            [ngStyle]="{
+                'background-color': dataImage.color,
+                'min-width.px': width,
+                'min-height.px': height,
+                'max-width.px': width,
+                'max-height.px': height,
+                'font-size.em': fontSize
+            }"
+            (click)="uploadFiles(key)"
+        >
+            {{ dataImage.charter }}
+        </div>
+        <div *ngIf="(dataImage | typeof) === 'string'">
+            <img
+                [ngStyle]="{
+                    'min-width.px': width,
+                    'min-height.px': height,
+                    'max-width.px': width,
+                    'max-height.px': height,
+                    'font-size.em': fontSize
+                }"
+                [src]="imagePlace | imgProfile"
+                class="img-profile cursor-pointer"
+                (click)="uploadFiles(key)"
+            />
+        </div>
+    </div>
+</div>

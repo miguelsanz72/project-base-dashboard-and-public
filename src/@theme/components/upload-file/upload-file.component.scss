@@ -1,0 +1,17 @@
+.content-modal {
+    overflow: hidden;
+    .content-labels {
+        position: relative;
+        bottom: 60px;
+        height: 300px;
+        .file-label {
+            cursor: pointer;
+            height: 100%;
+        }
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}

@@ -1,0 +1,32 @@
+<div fxLayout="row" fxLayoutAlign="center center" class="mt-8 content-modal">
+    <div class="content-labels d-flex justify-content-center mt-8">
+        <label class="file-label">
+            <img *ngIf="!imagenTem" src="assets/images/logo/preview.jpg" />
+            <img *ngIf="imagenTem" [src]="imagenTem" />
+
+            <input (change)="selectImage($event)" class="file-input" type="file" />
+            <span class="file-cta">
+                <span class="file-icon text-secondary pt-2">
+                    <mat-icon matSuffix>backup</mat-icon>
+                </span>
+                <span class="file-label">
+                    {{ 'MESSAGES.UPLOAD.SELECT_FILE' | translate }}
+                </span>
+            </span>
+        </label>
+    </div>
+</div>
+<div mat-dialog-actions class="pt-24" fxLayout="row wrap" fxLayoutAlign="center stretch">
+    <button mat-raised-button class="mat-accent mr-16" (click)="dialogRef.close(false)">
+        {{ 'FORMS_BASIC.BTNS.CLOSE' | translate }}
+    </button>
+    <button
+        mat-raised-button
+        class="mat-accent mr-16"
+        (click)="uploadFileAwsS3()"
+        [disabled]="!imagenTem"
+        type="button"
+    >
+        {{ 'MESSAGES.UPLOAD.UPLOAD_FILE' | translate }}
+    </button>
+</div>

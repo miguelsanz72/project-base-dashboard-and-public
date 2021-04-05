@@ -6,6 +6,7 @@
     [disabled]="disabled"
     *ngIf="buttonType === 'icon'"
     [class]="classes"
+    [type]="type"
 >
     <mat-icon>{{ icon }}</mat-icon>
 </button>
@@ -17,6 +18,7 @@
     [disabled]="disabled"
     *ngIf="buttonType === 'normal'"
     [class]="classes"
+    [type]="type"
 >
     <img class="me-2" *ngIf="iconImage.length > 0" [src]="iconImage" />
     {{ name }}

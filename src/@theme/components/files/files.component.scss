@@ -1,0 +1,59 @@
+.content-drag {
+    margin-top: 30px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: dotted 3px lightgray;
+    opacity: 0.5;
+
+    .icon {
+        color: #ccc;
+    }
+
+    small {
+        color: #ccc;
+        font-size: 1.4em;
+        text-align: center;
+    }
+}
+
+.content-list {
+    margin-top: 30px;
+}
+
+.file-over {
+    border-color: #fa9312;
+
+    .icon {
+        color: #fa9312;
+    }
+
+    small {
+        color: #020202;
+    }
+}
+
+.content-images {
+    display: flex;
+    justify-content: flex-start;
+
+    .example-card {
+        max-width: 400px;
+        overflow: hidden;
+    }
+}
+
+.content-drop {
+    display: flex;
+
+    .content-images {
+        height: 200px;
+
+        @media all and (max-width: 576px) {
+            height: auto;
+            width: 100%;
+        }
+    }
+}

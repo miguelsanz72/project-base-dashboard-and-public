@@ -21,22 +21,22 @@ export class BurndownChartComponent implements OnInit {
     colorScheme = {
         domain: ['#5AA454', '#E44D25'],
     };
-    public dialogRef: MatDialogRef<BurndownChartComponent>;
+    public dialogRef!: MatDialogRef<BurndownChartComponent>;
     constructor(@Inject(MAT_DIALOG_DATA) public _data: any) {}
 
     ngOnInit(): void {
         this.multi = dataChart;
     }
 
-    onSelect(data): void {
+    onSelect(data: any): void {
         console.log('Item clicked', JSON.parse(JSON.stringify(data)));
     }
 
-    onActivate(data): void {
+    onActivate(data: any): void {
         console.log('Activate', JSON.parse(JSON.stringify(data)));
     }
 
-    onDeactivate(data): void {
+    onDeactivate(data: any): void {
         console.log('Deactivate', JSON.parse(JSON.stringify(data)));
     }
 }
