@@ -6,12 +6,14 @@ export interface UIState {
     isLoading: boolean;
     message: string;
     err: IErrorApi | null | undefined;
+    error: any;
 }
 
 export const initialState: UIState = {
     isLoading: false,
     message: '',
     err: null,
+    error: null,
 };
 
 const _uiReducer = createReducer(
