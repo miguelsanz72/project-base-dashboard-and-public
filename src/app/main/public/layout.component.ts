@@ -20,8 +20,24 @@ export class LayoutComponent implements OnInit, OnDestroy {
     ngOnInit(): void {
         this.suscription = this.store.select('UI').subscribe((ui) => {
             this.loading = ui.isLoading;
-            if (ui.err !== null) this._alertsService.messages('', 'error', ui.message, ui.err?.name);
-            else if (ui.message.length > 1) this._alertsService.messageSnackBar(ui.message, '😁', 4000);
+            console.log(ui);
+            if (ui.err) {
+                if (ui.error) {
+                    const message = ui.error.err.message;
+                    const name = ui.error.err.name;
+                    this._alertsService.messages('', 'error', message, name);
+                } else {
+                    this._alertsService.messages('', 'error', ui.message, ui.err?.name);
+                }
+            } else if (ui.error) {
+                const message = ui.error.err.message;
+                const name = ui.error.err.name;
+                this._alertsService.messages('', 'error', message, name);
+            } else if (ui.message.length > 1) {
+                if (ui.message.includes('error')) {
+                    this._alertsService.messageSnackBar(ui.message, '🤕', 6000);
+                } else this._alertsService.messageSnackBar(ui.message, '😁', 4000);
+            }
         });
     }
 
